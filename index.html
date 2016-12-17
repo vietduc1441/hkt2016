@@ -12,8 +12,11 @@
         <div class="user_profile">
             <img src='{{user_profile.picture}}'>
             <div>{{user_profile.name}}</div>
-            <div>{{user_profile.company}}</div>
+            <div>{{user_profile.email}}</div>
             <div>{{user_profile.country}}</div>
+            <div>{{user_profile.data_of_bird}}</div>
+            <div>{{user_profile.work}}</div>
+            <div>{{user_profile.education}}</div>
         </div>
         <ul class="selection_profile">
             <li ng-click="onClickSelection()" ng-repeat="selection in recomment_selections">
@@ -23,24 +26,95 @@
             </li>
         </ul>
         <ul class=" profile ">
-            <li id="{{selection.id}}" ng-repeat="selection in recomment_selections" style="display: none">
-<div>{{selection.title}}</div>
-</li>
-</ul>
-<div class="following "></div>
-</div>
+            <li id="1">
+                <div>Summary</div>
+                <div>
+                    <div>Summary</div>
+                    <input>
+                    <button>Save</button>
+                    <button>Cancel</button>
+                </div>
+                <hr>
+            </li>
+            <li id="2">
+                <div>Skills</div>
+                <div>
+                    <div>
+                        <input>
+                        <button>Add</button>
+                    </div>
+                    <div>Show input</div>
+                    <button>Save</button>
+                    <button>Cancel</button>
+                </div>
+                <button>Add Skill</button>
+                <hr>
+            </li>
+            <li id="3">
+                <div>Languages</div>
+                <div>
+                    <div>
+                        <div>Language</div>
+                        <input>
+                    </div>
+                    <button>Save</button>
+                    <button>Cancel</button>
+                </div>
+                <button>Add Language</button>
+                <hr>
+            </li>
+            <li id="20">
+                <div>Education</div>
+                <div id="{{education.id}}" ng-repeat="education in user_educations">
+                    <div id="{{education.school.id}}">{{education.school.name}}</div>
+                    <div>{{education.type}}</div>
+                    <div id="{{education.year.id}}">{{education.year.name}}</div>
+                    <hr>
+                </div>
+                <button>Add Education</button>
+                <hr>
+            </li>
+            <li id="21">
+                <div>Experience</div>
+                <div id="{{work.id}}" ng-repeat="work in user_works">
+                    <div id="{{work.position.id}}">{{work.position.name}}</div>
+                    <div id="{{work.employer.id}}">{{work.employer.name}}</div>
+                    <div>{{work.start_date}}</div>
+                    <div>{{work.description}}</div>
+                    <div>
+                        <div>Project:</div>
+                        <div ng-repeat="project in work.projects">
+                            <div id="{{project.id}}">{{project.name}}</div>
+                            <div>{{project.description}}</div>
+                            <div>
+                                <div>With:</div>
+                                <div ng-repeat="person in project.with">
+                                    <div id="{{person.id}}">{{person.name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="{{education.year.id}}">{{education.year.name}}</div>
+                    <hr>
+                </div>
+                <button>Add Experience</button>
+                <hr>
+            </li>
+        </ul>
+        <div class="following "></div>
+    </div>
 
-<!-- Angular Material requires Angular.js Libraries -->
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js "></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js "></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js "></script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js "></script>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js "></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js "></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js "></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js "></script>
 
-<!-- Angular Material Library -->
-<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js "></script>
-<script src="./script.js "></script>
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js "></script>
+    <script src="./script.js "></script>
 
-<!-- Your application bootstrap  -->
+    <!-- Your application bootstrap  -->
 
 
 </body>
